@@ -80,7 +80,7 @@ function createCards(colors) {
     cardInner.append(cardBack);
     cardInner.classList.add('card-inner');
     cardFront.classList.add('card-front');
-    cardFront.innerHTML = '<h1>🐶</h1>';
+    cardFront.innerHTML = '<p>🐶</p>';
 
     cardBack.classList.add('card-back');
 

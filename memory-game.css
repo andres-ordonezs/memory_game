@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#header-container {
+  display: flex;
+  height: auto;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+#header-container > h1 {
+  padding: 10px 0;
+}
+
+#score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  border-radius: 10px;
+  background-color: #eeeeee;
+}
+
+.score-label {
+  font-size: 20px;
+  padding: 5px 10px;
+}
+
+#current-score {
+  background-color: yellow;
+}
+
+#best-score {
+  background-color: aquamarine;
+}
+
+.score {
+  padding: 2px 5px;
+  border-radius: 5px;
+  width: 25px;
+}
+
+.header-container--buttons {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.header-container--buttons > .btn {
+  margin: 0 20px;
+}
+
+#game-container {
+  display: flex;
+  flex: 1 0 0;
+  padding: 10px 0;
+  background-color: #eeeeee;
+  position: relative;
+}
+
+#card-container {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 2fr));
+  width: 90%;
+}
+
+.card {
+  min-width: 170px;
+  height: 250px;
+  margin: 15px 20px;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 8px;
+  perspective: 1000px;
+  border: none;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-color: rgb(43, 165, 151);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background-size: contain;
+}
+
+#overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding-top: 20px;
+}
+
+@media (max-width: 750px) {
+  #card-container {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 2fr));
+    width: 90%;
+  }
+
+  .card {
+    min-width: 110px;
+    height: 190px;
+    margin: 8px 10px;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 8px;
+    perspective: 1000px;
+    border: none;
+  }
+}
